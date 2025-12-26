@@ -755,9 +755,30 @@ input:focus, textarea:focus{
   background: #0f8a3c !important;
   color: #fff !important;
 }
-/* Masquer Réalisations et Avis (temporaire) */
+/* ===== Masquer "Réalisations" + "Avis" (menu + sections) ===== */
+
+/* 1) Masquer dans le menu (desktop + mobile) */
 .site-nav a[href="#realisations"],
-.site-nav a[href="#avis"] {
-  display: none;
+.site-nav a[href="#avis"],
+.site-nav a[href*="realisations"],
+.site-nav a[href*="avis"],
+.site-header .site-nav a[href="#realisations"],
+.site-header .site-nav a[href="#avis"],
+.site-header .site-nav a[href*="realisations"],
+.site-header .site-nav a[href*="avis"],
+body.nav-open .site-nav a[href="#realisations"],
+body.nav-open .site-nav a[href="#avis"],
+body.nav-open .site-nav a[href*="realisations"],
+body.nav-open .site-nav a[href*="avis"]{
+  display: none !important;
 }
+
+/* 2) Masquer les sections elles-mêmes (si elles existent) */
+#realisations,
+#avis,
+section#realisations,
+section#avis{
+  display: none !important;
+}
+
 
