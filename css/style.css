@@ -4,19 +4,27 @@
 */
 
 :root{
-  --bg: #ffffff;
-  --bg-soft: #f5f7fb;
-  --card: #ffffff;
+  /* Palette douce (bleu clair / beige / blanc) */
+  --white: #ffffff;
+  --beige: #f6efe4;
+  --beige-2: #efe3d2;
+  --blue: #2a6fd6;     /* bleu clair pro */
+  --blue-2: #1f5fbe;
+
+  --bg: var(--white);
+  --bg-soft: #fbf7f0;  /* beige très clair */
+  --card: var(--white);
   --text: #0b1220;
-  --muted: #4b5563;
-  --line: #e6ebf3;
+  --muted: #475569;
+  --line: #e7dfd3;
   --shadow: 0 10px 30px rgba(11,18,32,.08);
 
-  /* Couleurs "imprimerie" : bleu profond + accent vert (WhatsApp) */
-  --primary: #0b2d6b;
-  --primary-2: #0a3a88;
-  --accent: #16a34a;
-  --accent-2:#0f8a3c;
+  --primary: var(--blue);
+  --primary-2: var(--blue-2);
+
+  /* WhatsApp (CTA) */
+  --whatsapp: #16a34a;
+  --whatsapp-2: #0f8a3c;
 
   --radius: 16px;
   --radius-sm: 12px;
@@ -78,7 +86,7 @@ a:hover{ color: var(--primary-2); }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255,255,255,.86);
+  background: color-mix(in srgb, var(--bg) 82%, var(--beige) 18%);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -129,9 +137,9 @@ a:hover{ color: var(--primary-2); }
 .site-nav a:hover{ background: var(--bg-soft); }
 .site-nav a:focus-visible{ outline: 3px solid rgba(11,45,107,.22); outline-offset: 2px; }
 .nav-cta{
-  background: rgba(22,163,74,.10);
-  color: var(--accent-2) !important;
-  border: 1px solid rgba(22,163,74,.18);
+  background: color-mix(in srgb, var(--beige) 70%, var(--bg) 30%);
+  color: var(--primary-2) !important;
+  border: 1px solid color-mix(in srgb, var(--line) 55%, var(--primary) 45%);
 }
 .nav-cta:hover{ background: rgba(22,163,74,.14) !important; }
 
@@ -222,9 +230,9 @@ h3{ font-size: 1.1rem; margin: 0 0 .35rem; }
 .hero{
   padding: 2.25rem 0 2.75rem;
   background:
-    radial-gradient(800px 220px at 10% 10%, rgba(11,45,107,.10), transparent 60%),
-    radial-gradient(800px 260px at 90% 0%, rgba(22,163,74,.08), transparent 55%),
-    linear-gradient(#fff, #fff);
+    radial-gradient(900px 260px at 10% 10%, color-mix(in srgb, var(--primary) 20%, transparent), transparent 60%),
+    radial-gradient(900px 280px at 90% 0%, color-mix(in srgb, var(--beige-2) 55%, transparent), transparent 60%),
+    linear-gradient(var(--bg), var(--bg));
 }
 .hero-inner{
   display:grid;
@@ -291,15 +299,15 @@ h3{ font-size: 1.1rem; margin: 0 0 .35rem; }
 .btn:active{ transform: translateY(1px); }
 .btn:focus-visible{ outline: 3px solid rgba(11,45,107,.22); outline-offset: 2px; }
 .btn-primary{
-  background: var(--accent);
+  background: var(--whatsapp);
   color: #fff;
   border-color: rgba(0,0,0,.08);
 }
-.btn-primary:hover{ background: var(--accent-2); color:#fff; }
+.btn-primary:hover{ background: var(--whatsapp-2); color:#fff; }
 .btn-secondary{
-  background: rgba(11,45,107,.08);
-  color: var(--primary);
-  border-color: rgba(11,45,107,.16);
+  background: color-mix(in srgb, var(--primary) 10%, var(--bg) 90%);
+  color: var(--primary-2);
+  border-color: color-mix(in srgb, var(--primary) 22%, var(--line) 78%);
 }
 .btn-secondary:hover{ background: rgba(11,45,107,.12); }
 .btn-ghost{
@@ -334,8 +342,8 @@ h3{ font-size: 1.1rem; margin: 0 0 .35rem; }
   align-items:center;
   justify-content:center;
   margin-bottom: .75rem;
-  background: rgba(11,45,107,.08);
-  color: var(--primary);
+  background: color-mix(in srgb, var(--beige) 55%, var(--bg) 45%);
+  color: var(--primary-2);
 }
 .card p{ margin: 0; color: var(--muted); }
 
@@ -486,7 +494,7 @@ input:focus, textarea:focus{ outline: 3px solid rgba(11,45,107,.18); border-colo
   width: 56px;
   height: 56px;
   border-radius: 18px;
-  background: var(--accent);
+  background: var(--whatsapp);
   color: #fff;
   display:flex;
   align-items:center;
@@ -495,7 +503,7 @@ input:focus, textarea:focus{ outline: 3px solid rgba(11,45,107,.18); border-colo
   border: 1px solid rgba(0,0,0,.08);
   text-decoration:none;
 }
-.wa-float:hover{ background: var(--accent-2); color:#fff; }
+.wa-float:hover{ background: var(--whatsapp-2); color:#fff; }
 .wa-float:focus-visible{ outline: 3px solid rgba(255,255,255,.65); outline-offset: 3px; }
 .wa-float svg{ width: 26px; height: 26px; display:block; }
 
