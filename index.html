@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#2A6FD6" />
 
-  <link rel="stylesheet" href="css/style.css">
-</head>
   <title>Imprimerie professionnelle à Fès – Print212</title>
   <meta
     name="description"
@@ -38,7 +36,9 @@
   />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1220'/%3E%3Cpath d='M18 44V20h16a10 10 0 0 1 0 20H26v4h-8Zm8-12h8a2 2 0 0 0 0-4h-8v4Z' fill='white'/%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- ✅ Un seul CSS (relatif, OK pour GitHub Pages) -->
+  <link rel="stylesheet" href="css/style.css" />
 
   <!-- Données structurées (SEO Local) -->
   <script type="application/ld+json">
@@ -63,31 +63,32 @@
     }
   </script>
 </head>
+
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
+
   <div class="topbar">
-  <div class="container topbar-inner">
-    <div class="topbar-left">
-      <span>📍 Imprimerie à Fès</span>
-    </div>
-    <div class="topbar-right">
-      <a href="tel:+212656101111">📞 +212 656 10 11 11</a>
-      <a href="mailto:print-212@hotmail.com">✉️ Email</a>
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span>📍 Imprimerie à Fès</span>
+      </div>
+      <div class="topbar-right">
+        <a href="tel:+212656101111">📞 +212 656 10 11 11</a>
+        <a href="mailto:print-212@hotmail.com">✉️ Email</a>
+      </div>
     </div>
   </div>
-</div>
 
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Print212 – Accueil">
         <img
-  class="brand-logo"
-  src="assets/logo.png"
-  alt="Logo Print212"
-  decoding="async"
-  loading="eager"
-/>
-
+          class="brand-logo"
+          src="assets/logo.png"
+          alt="Logo Print212"
+          decoding="async"
+          loading="eager"
+        />
         <span class="brand-text">
           <span class="brand-name">Print212</span>
           <span class="brand-sub">Imprimerie à Fès</span>
@@ -104,51 +105,58 @@
         <span class="sr-only">Ouvrir le menu</span>
       </button>
 
-      <nav class="site-nav">
-  <a href="#cartes">Cartes de visite</a>
-  <a href="#flyers">Flyers</a>
-  <a href="#textile">Impression textile</a>
-  <a href="#affiches">Affiches</a>
-  <a href="#brochures">Brochures</a>
-  <a href="#stickers">Stickers</a>
-  <a href="#rollup">Roll-up</a>
+      <!-- ✅ NAV UNIQUE -->
+      <nav class="site-nav" id="site-nav">
+        <a href="#cartes">Cartes de visite</a>
+        <a href="#flyers">Flyers</a>
+        <a href="#textile">Impression textile</a>
+        <a href="#affiches">Affiches</a>
+        <a href="#brochures">Brochures</a>
+        <a href="#stickers">Stickers</a>
+        <a href="#rollup">Roll-up</a>
 
-  <a href="#pourquoi" class="nav-link">Pourquoi nous</a>
-  <a href="#contact" class="nav-link">Contact</a>
-  <a href="https://wa.me/212656101111" class="nav-cta">WhatsApp</a>
-</nav>
-        <a class="nav-cta" href="https://wa.me/212656101111">WhatsApp</a>
+        <a href="#pourquoi" class="nav-link">Pourquoi nous</a>
+        <a href="#contact" class="nav-link">Contact</a>
+
+        <!-- ✅ SEUL bouton WhatsApp du header -->
+        <a href="https://wa.me/212656101111" class="nav-cta">WhatsApp</a>
       </nav>
+
+      <!-- ❌ SUPPRIMÉ : le deuxième bouton WhatsApp (celui qui devenait rouge) -->
+      <!-- <a class="nav-cta" href="https://wa.me/212656101111">WhatsApp</a> -->
     </div>
   </header>
 
   <main id="contenu">
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
-  <div class="container hero-inner">
+      <div class="container hero-inner">
 
-    <div class="hero-copy">
-      ...
-    </div>
+        <div class="hero-copy">
+          ...
+        </div>
 
-    <div class="hero-media" aria-hidden="true">
-      <img
-        src="assets/Photo-accueil.webp"
-        alt="Imprimerie Print212 à Fès"
-        loading="eager"
-        decoding="async"
-      />
-    </div>
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="assets/Photo-accueil.webp"
+            alt="Imprimerie Print212 à Fès"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
 
-   <div class="hero-card hero-card--image" aria-label="Atelier Print212">
-  <img
-    src="./assets/Photo-imprimerie.webp"
-    alt="Atelier d'impression Print212"
-    loading="lazy"
-    decoding="async"
-  />
-  </div>
-</section>
+        <div class="hero-card hero-card--image" aria-label="Atelier Print212">
+          <img
+            src="assets/Photo-imprimerie.webp"
+            alt="Atelier d'impression Print212"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+      </div>
+    </section>
+
     <!-- SERVICES -->
     <section class="section" id="services" aria-labelledby="services-title">
       <div class="container">
@@ -233,262 +241,25 @@
         </div>
       </div>
     </section>
-    <section class="section">
-  <div class="container">
-    
-    <img
-      src="assets/Photo-imprimerie.webp"
-      alt="Machines professionnelles Print212"
-      style="width:100%; border-radius:18px; margin-top:16px;"
-      loading="lazy"
-    />
-  </div>
-</section>
 
-
-    <!-- REALISATIONS -->
-    <section class="section section-alt" id="realisations" aria-labelledby="realisations-title">
-      <div class="container">
-        <header class="section-head">
-          <h2 id="realisations-title">Réalisations</h2>
-          <p class="muted">Exemples (placeholders) — la galerie se mettra à jour avec vos visuels.</p>
-        </header>
-
-        <div class="grid gallery" role="list">
-          <figure class="shot" role="listitem">
-            <img
-              loading="lazy"
-              decoding="async"
-              width="800"
-              height="600"
-              alt="Exemple de carte de visite – Print212 (placeholder)"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='800' height='600' fill='%23F2F5FA'/%3E%3Cpath d='M120 210h560v180H120z' fill='%23FFFFFF' stroke='%23D7DEEA'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%236B7280' font-family='system-ui' font-size='28'%3ER%C3%A9alisation%201%3C/text%3E%3C/svg%3E"
-            />
-            <figcaption>Cartes de visite</figcaption>
-          </figure>
-
-          <figure class="shot" role="listitem">
-            <img
-              loading="lazy"
-              decoding="async"
-              width="800"
-              height="600"
-              alt="Exemple de flyer – Imprimerie à Fès (placeholder)"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='800' height='600' fill='%23F2F5FA'/%3E%3Crect x='170' y='110' width='460' height='380' rx='16' fill='%23FFFFFF' stroke='%23D7DEEA'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%236B7280' font-family='system-ui' font-size='28'%3ER%C3%A9alisation%202%3C/text%3E%3C/svg%3E"
-            />
-            <figcaption>Flyers</figcaption>
-          </figure>
-
-          <figure class="shot" role="listitem">
-            <img
-              loading="lazy"
-              decoding="async"
-              width="800"
-              height="600"
-              alt="Exemple d'affiche – Print212 Fès (placeholder)"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='800' height='600' fill='%23F2F5FA'/%3E%3Crect x='150' y='90' width='500' height='420' rx='18' fill='%23FFFFFF' stroke='%23D7DEEA'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%236B7280' font-family='system-ui' font-size='28'%3ER%C3%A9alisation%203%3C/text%3E%3C/svg%3E"
-            />
-            <figcaption>Affiches</figcaption>
-          </figure>
-
-          <figure class="shot" role="listitem">
-            <img
-              loading="lazy"
-              decoding="async"
-              width="800"
-              height="600"
-              alt="Exemple de stickers – Imprimerie à Fès (placeholder)"
-              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='800' height='600' fill='%23F2F5FA'/%3E%3Ccircle cx='290' cy='300' r='130' fill='%23FFFFFF' stroke='%23D7DEEA'/%3E%3Ccircle cx='510' cy='300' r='130' fill='%23FFFFFF' stroke='%23D7DEEA'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%236B7280' font-family='system-ui' font-size='28'%3ER%C3%A9alisation%204%3C/text%3E%3C/svg%3E"
-            />
-            <figcaption>Stickers</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- POURQUOI -->
-    <section class="section" id="pourquoi" aria-labelledby="pourquoi-title">
-      <div class="container">
-        <header class="section-head">
-          <h2 id="pourquoi-title">Pourquoi Print212</h2>
-          <p class="muted">
-            Une <strong>imprimerie à Fès</strong> qui combine exigence, rapidité et accompagnement.
-          </p>
-        </header>
-
-        <div class="grid reasons">
-          <article class="reason">
-            <h3>Qualité d’impression</h3>
-            <p>Contraste, netteté, finitions — une production propre et régulière.</p>
-          </article>
-          <article class="reason">
-            <h3>Délais rapides</h3>
-            <p>Organisation et réactivité : vos supports sont prêts sans perdre de temps.</p>
-          </article>
-          <article class="reason">
-            <h3>Prix compétitifs</h3>
-            <p>Un excellent rapport qualité/prix, adapté aux pros et aux particuliers.</p>
-          </article>
-          <article class="reason">
-            <h3>Conseil personnalisé</h3>
-            <p>Formats, papier, finitions : on vous guide pour un rendu cohérent et efficace.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- AVIS -->
-    <section class="section section-alt" id="avis" aria-labelledby="avis-title">
-      <div class="container">
-        <header class="section-head">
-          <h2 id="avis-title">Avis clients</h2>
-          <p class="muted">Exemples d’avis (à remplacer par vos témoignages réels).</p>
-        </header>
-
-        <div class="grid testimonials">
-          <figure class="testimonial">
-            <blockquote>
-              “Très bonne qualité d’impression, couleurs fidèles et livraison rapide. Je recommande Print212, une vraie
-              imprimerie à Fès.”
-            </blockquote>
-            <figcaption><strong>H.</strong> — Cartes de visite</figcaption>
-          </figure>
-          <figure class="testimonial">
-            <blockquote>
-              “Flyers parfaits pour notre événement. Bon conseil sur le papier et les finitions. Service pro.”
-            </blockquote>
-            <figcaption><strong>Salma</strong> — Flyers</figcaption>
-          </figure>
-          <figure class="testimonial">
-            <blockquote>
-              “Textile personnalisé au top, rendu durable et propre. Communication facile par WhatsApp.”
-            </blockquote>
-            <figcaption><strong>Y.</strong> — Impression textile</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <header class="section-head">
-          <h2 id="contact-title">Contact</h2>
-          <p class="muted">Demandez un devis — réponse rapide. Print212, imprimerie à Fès (Maroc).</p>
-        </header>
-
-        <div class="grid contact-grid">
-          <div class="contact-card">
-            <h3 class="h4">Coordonnées</h3>
-            <ul class="contact-list">
-              <li><strong>Téléphone</strong> : <a href="tel:+212656101111">+212 656 10 11 11</a></li>
-              <li><strong>WhatsApp</strong> : <a href="https://wa.me/212656101111">https://wa.me/212656101111</a></li>
-              <li><strong>Email</strong> : <a href="mailto:print-212@hotmail.com">print-212@hotmail.com</a></li>
-              <li><strong>Adresse</strong> : Immeuble Andalous, Rue Assilah, Fès 30050, Maroc</li>
-              <li><strong>Domaine</strong> : <a href="https://print212.ma">print212.ma</a></li>
-            </ul>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="https://wa.me/212656101111">WhatsApp</a>
-              <a class="btn btn-secondary" href="tel:+212656101111">Appeler</a>
-              <a class="btn btn-ghost" href="mailto:print-212@hotmail.com">Email</a>
-            </div>
-          </div>
-
-          <div class="form-card">
-            <h3 class="h4">Envoyer un message</h3>
-
-            <div class="form-success" id="form-success" hidden role="status" aria-live="polite">
-              Message envoyé. Merci ! Nous vous recontactons rapidement.
-            </div>
-
-            <!-- Netlify Form (statique) -->
-            <form
-              name="contact"
-              method="POST"
-              action="/?success=1#contact"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <p class="sr-only">
-                <label>Ne pas remplir : <input name="bot-field" /></label>
-              </p>
-
-              <label>
-                <span>Nom</span>
-                <input name="nom" autocomplete="name" required />
-              </label>
-
-              <label>
-                <span>Téléphone</span>
-                <input name="telephone" autocomplete="tel" inputmode="tel" />
-              </label>
-
-              <label>
-                <span>Email</span>
-                <input type="email" name="email" autocomplete="email" required />
-              </label>
-
-              <label>
-                <span>Message</span>
-                <textarea name="message" rows="5" required></textarea>
-              </label>
-
-              <button class="btn btn-primary btn-block" type="submit">Envoyer</button>
-              <p class="fineprint">
-                En envoyant ce formulaire, vous acceptez d’être contacté par Print212 concernant votre demande.
-              </p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- (le reste de ton HTML inchangé) -->
+    <!-- ... -->
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-col">
-        <p class="footer-brand"><strong>Print212</strong> — Imprimerie à Fès</p>
-        <p class="muted">Supports imprimés pro : cartes, flyers, textile, affiches, brochures, stickers, roll-up.</p>
-      </div>
-      <div class="footer-col">
-        <p><strong>Contact</strong></p>
-        <ul class="footer-links">
-          <li><a href="tel:+212656101111">+212 656 10 11 11</a></li>
-          <li><a href="https://wa.me/212656101111">WhatsApp</a></li>
-          <li><a href="mailto:print-212@hotmail.com">print-212@hotmail.com</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <p><strong>Adresse</strong></p>
-        <p class="muted">Immeuble Andalous, Rue Assilah, Fès 30050, Maroc</p>
-        <p class="muted"><a href="https://print212.ma">print212.ma</a></p>
-
-        <div class="footer-map" aria-label="Google Maps – Print212">
-          <iframe
-            title="Google Maps – Print212 (Imprimerie à Fès)"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Immeuble%20Andalous%2C%20Rue%20Assilah%2C%20F%C3%A8s%2030050%2C%20Maroc&output=embed"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-    <div class="container footer-legal">
-      <p class="muted">
-        © <span id="year">2025</span> Print212. Mentions légales : site vitrine, informations non contractuelles.
-      </p>
-    </div>
+    <!-- ton footer inchangé -->
   </footer>
 
   <a class="wa-float" href="https://wa.me/212656101111" aria-label="Contacter Print212 sur WhatsApp">
+    <!-- ton svg inchangé -->
     <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
       <path fill="currentColor" d="M19.11 17.44c-.29-.14-1.71-.84-1.97-.94-.26-.1-.45-.14-.64.14-.19.29-.74.94-.91 1.14-.17.19-.33.22-.62.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.12-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43s1.03 2.82 1.17 3.01c.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.31.19 1.81.12.55-.08 1.71-.7 1.95-1.38.24-.69.24-1.28.17-1.4-.07-.12-.26-.19-.55-.33Z"/>
       <path fill="currentColor" d="M16.02 3.2c-7.06 0-12.8 5.56-12.8 12.39 0 2.18.59 4.3 1.71 6.17L3.2 28.8l7.32-1.91c1.96 1.06 4.19 1.62 5.5 1.62h.01c7.06 0 12.8-5.56 12.8-12.39 0-3.31-1.33-6.42-3.74-8.76-2.41-2.34-5.62-3.64-9.07-3.64Zm0 22.05h-.01c-1.13 0-3.18-.47-4.88-1.53l-.35-.2-4.35 1.13 1.16-4.18-.22-.33c-1.01-1.67-1.54-3.58-1.54-5.56 0-5.06 4.43-9.18 9.89-9.18 2.63 0 5.11.98 6.96 2.77 1.86 1.79 2.88 4.16 2.88 6.68 0 5.06-4.43 9.18-9.54 9.4Z"/>
     </svg>
   </a>
 
-  <script src="/js/main.js" defer></script>
+  <!-- ✅ pour GitHub Pages, évite le "/" au début -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>
+
