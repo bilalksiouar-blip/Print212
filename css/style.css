@@ -965,6 +965,10 @@ h2:has(+ img){
 .site-header a[href="#pourquoi"]{
   display: none !important;
 }
+   .site-nav a{
+  white-space: nowrap;
+}
+
 
 
 
