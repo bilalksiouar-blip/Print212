@@ -111,7 +111,7 @@ a:hover{ color: var(--primary-2); }
 .brand-logo{
   display:block;
   width:auto;
-  height: 56px;
+  height: 64px;
   object-fit: contain;
 }
 .brand-text{ display:flex; flex-direction:column; line-height:1.1; min-width:0; }
