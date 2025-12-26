@@ -803,5 +803,93 @@ section#avis{
   object-fit: cover;          /* clé */
   display: block;
 }
+/* ===========================
+   FIX FINAL (Header + Hero images + Menu)
+   À COLLER TOUT EN BAS DU CSS
+   =========================== */
+
+/* 1) HEADER : hauteur + logo grand */
+:root{
+  --header-h: 110px;
+}
+
+.site-header .header-inner{
+  height: var(--header-h) !important;
+  align-items: center !important;
+}
+
+/* Cache le texte (Print212 / Imprimerie à Fès) dans le header */
+.site-header .brand-text,
+.site-header .brand-name,
+.site-header .brand-sub{
+  display: none !important;
+}
+
+/* Logo plus grand (sans être écrasé) */
+.site-header img.brand-logo{
+  height: 92px !important;
+  width: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Mobile */
+@media (max-width: 540px){
+  :root{ --header-h: 92px; }
+  .site-header img.brand-logo{ height: 72px !important; }
+}
+
+/* 2) Bouton WhatsApp : vert + texte blanc */
+.site-header .site-nav a.nav-cta,
+.site-header .site-nav a[href*="wa.me"],
+.site-header .site-nav a[href*="whatsapp"]{
+  background: #16a34a !important;
+  color: #fff !important;
+  border: 1px solid rgba(0,0,0,.10) !important;
+  border-radius: 999px !important;
+  padding: .65rem 1rem !important;
+  font-weight: 800 !important;
+}
+
+.site-header .site-nav a.nav-cta:hover,
+.site-header .site-nav a[href*="wa.me"]:hover,
+.site-header .site-nav a[href*="whatsapp"]:hover{
+  background: #0f8a3c !important;
+  color: #fff !important;
+}
+
+/* 3) Masquer “Réalisations” + “Avis” dans le menu + sections */
+.site-nav a[href="#realisations"],
+.site-nav a[href="#avis"],
+body.nav-open .site-nav a[href="#realisations"],
+body.nav-open .site-nav a[href="#avis"]{
+  display: none !important;
+}
+
+#realisations,
+#avis,
+section#realisations,
+section#avis{
+  display: none !important;
+}
+
+/* 4) HERO : les 2 images même taille */
+.hero-media,
+.hero-card.hero-card--image{
+  height: 340px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.hero-media img,
+.hero-card.hero-card--image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
 
