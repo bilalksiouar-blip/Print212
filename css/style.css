@@ -755,3 +755,9 @@ input:focus, textarea:focus{
   background: #0f8a3c !important;
   color: #fff !important;
 }
+/* Masquer Réalisations et Avis (temporaire) */
+.site-nav a[href="#realisations"],
+.site-nav a[href="#avis"] {
+  display: none;
+}
+
