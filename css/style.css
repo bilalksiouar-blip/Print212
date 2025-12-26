@@ -780,5 +780,17 @@ section#realisations,
 section#avis{
   display: none !important;
 }
+.hero-card--image{
+  overflow: hidden;
+  border-radius: 18px;
+  min-height: 320px;
+}
+
+.hero-card--image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 
