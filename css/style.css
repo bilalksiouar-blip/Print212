@@ -1003,6 +1003,11 @@ h2:has(+ img){
 .site-header a:not(.nav-cta)[href*="whatsapp"] {
   display: none !important;
 }
+/* Dernier recours : bouton WhatsApp rouge */
+.site-header a[style*="red"],
+.site-header a.whatsapp-red {
+  display: none !important;
+}
 
 
 
