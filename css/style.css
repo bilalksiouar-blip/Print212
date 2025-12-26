@@ -144,7 +144,7 @@ a:hover{ color: var(--primary-2); }
 }
 .brand-logo{
   width: auto;
-  height: 54px;           /* ✅ Logo plus grand */
+  height: 72px;           /* ✅ Logo plus grand */
   object-fit: contain;
 }
 .brand-text{
