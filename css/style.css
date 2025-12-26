@@ -949,7 +949,16 @@ h2:has(+ img){
     border: 1px solid #e5e7eb;
     background: #fff;
   }
+/* =========================
+   FIX: supprimer l'ancien menu (liens rouges)
+   ========================= */
+
+/* Cache les liens "Réalisations / Avis / Contact" (souvent dans .main-nav) */
+.main-nav,
+.main-nav a{
+  display: none !important;
 }
+
 
 
 
