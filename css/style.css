@@ -703,44 +703,55 @@ input:focus, textarea:focus{
   display: none !important;
 }
 
-/* 3) Logo plus grand + bien centré */
-.site-header .brand{
-  gap: 0 !important;
+/* ===== FIX HEADER : LOGO + WHATSAPP + MASQUER TEXTE ===== */
+
+/* Augmente la hauteur du header (sinon le logo sera “écrasé”) */
+:root{
+  --header-h: 110px;
 }
 
+/* Centrage vertical + plus d'espace */
 .site-header .header-inner{
   height: var(--header-h) !important;
   align-items: center !important;
 }
 
-.site-header .brand-logo{
-  height: 64px !important;   /* ← augmente ici (ex: 72px) */
+/* On cache Print212 / Imprimerie à Fès dans le header */
+.site-header .brand-text{
+  display: none !important;
+}
+
+/* LOGO : on force une grande hauteur */
+.site-header img.brand-logo{
+  height: 92px !important;   /* augmente ici si tu veux (ex 100px) */
   width: auto !important;
   max-height: none !important;
+  display: block !important;
   object-fit: contain !important;
 }
 
-/* Responsive : un peu plus petit sur mobile */
+/* Mobile */
 @media (max-width: 540px){
-  .site-header .brand-logo{
-    height: 56px !important;
-  }
+  :root{ --header-h: 92px; }
+  .site-header img.brand-logo{ height: 72px !important; }
 }
 
-/* 4) Bouton WhatsApp (nav-cta) en VERT + texte BLANC */
-.site-header .site-nav .nav-cta{
-  background: var(--whatsapp) !important;
+/* WHATSAPP : vert + texte blanc (même si la classe n'est pas nav-cta) */
+.site-header .site-nav a.nav-cta,
+.site-header .site-nav a[href*="wa.me"],
+.site-header .site-nav a[href*="whatsapp"]{
+  background: #16a34a !important;
   color: #fff !important;
-  border: 1px solid rgba(0,0,0,.08) !important;
-}
-
-.site-header .site-nav .nav-cta:hover{
-  background: var(--whatsapp-2) !important;
-  color: #fff !important;
-}
-
-/* Si jamais tu as un style "pill" clair qui écrase, on force aussi ça */
-.site-header .site-nav a.nav-cta{
+  border: 1px solid rgba(0,0,0,.10) !important;
+  border-radius: 999px !important;
+  padding: .65rem 1rem !important;
   font-weight: 800 !important;
 }
 
+/* Hover */
+.site-header .site-nav a.nav-cta:hover,
+.site-header .site-nav a[href*="wa.me"]:hover,
+.site-header .site-nav a[href*="whatsapp"]:hover{
+  background: #0f8a3c !important;
+  color: #fff !important;
+}
