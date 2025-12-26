@@ -890,6 +890,13 @@ section#avis{
   object-fit: cover;
   display: block;
 }
+/* Supprimer le titre "Notre atelier d’impression" */
+h2:has(+ .shot),
+h2:has(+ figure),
+h2:has(+ img){
+  display: none !important;
+}
+
 
 
 
