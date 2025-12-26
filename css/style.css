@@ -1008,6 +1008,18 @@ h2:has(+ img){
 .site-header a.whatsapp-red {
   display: none !important;
 }
+   /* Supprimer le WhatsApp "rouge" (hors menu) */
+.site-header .header-inner > a[href*="wa.me"],
+.site-header .header-inner > a[href*="whatsapp"]{
+  display: none !important;
+}
+
+/* Important: garder celui dans le menu */
+.site-header .site-nav a[href*="wa.me"],
+.site-header .site-nav a[href*="whatsapp"]{
+  display: inline-flex !important;
+}
+
 
 
 
