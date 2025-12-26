@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://print212.ma/sitemap.xml
+
