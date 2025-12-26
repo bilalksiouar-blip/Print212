@@ -1019,6 +1019,17 @@ h2:has(+ img){
 .site-header .site-nav a[href*="whatsapp"]{
   display: inline-flex !important;
 }
+/* ✅ Cache tout lien WhatsApp dans le header SAUF celui dans .site-nav */
+.site-header a[href*="wa.me"],
+.site-header a[href*="whatsapp"]{
+  display: none !important;
+}
+
+/* ✅ Mais on ré-affiche celui du menu */
+.site-header .site-nav a[href*="wa.me"],
+.site-header .site-nav a[href*="whatsapp"]{
+  display: inline-flex !important;
+}
 
 
 
