@@ -1,639 +1,390 @@
-/* Print212 — CSS (pro, moderne, responsive)
-   - Mobile-first
-   - Sans fonts externes
-   - Header + topbar + hero image + palette moderne
-*/
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2a6fd6" />
 
-:root{
-  /* Neutres */
-  --white:#ffffff;
-  --text:#0f172a;
-  --muted:#51607a;
-  --border:rgba(15,23,42,.10);
+  <title>Imprimerie professionnelle à Fès — Print212</title>
+  <meta
+    name="description"
+    content="Print212, imprimerie à Fès : cartes de visite, flyers, textile, affiches, brochures, stickers et roll-up. Devis rapide, qualité pro et délais rapides."
+  />
+  <link rel="canonical" href="https://print212.ma" />
 
-  /* Fond doux + gradients */
-  --bg:#f6f9ff;
-  --bg2:#ffffff;
-  --surface:#ffffff;
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_MA" />
+  <meta property="og:site_name" content="Print212" />
+  <meta property="og:title" content="Imprimerie professionnelle à Fès — Print212" />
+  <meta property="og:description" content="Cartes de visite, flyers, textile, affiches, brochures, stickers et roll-up. Devis rapide." />
+  <meta property="og:image" content="assets/hero.jpg" />
 
-  /* Palette Print */
-  --primary:#2a6fd6;
-  --primary-2:#1f5fbe;
-  --accent:#b9a7ff;          /* lavande */
-  --success:#16a34a;         /* WhatsApp */
-  --success-2:#0f8a3c;
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 
-  /* UI */
-  --shadow: 0 14px 40px rgba(15,23,42,.10);
-  --shadow-sm: 0 8px 22px rgba(15,23,42,.08);
-  --radius: 18px;
-  --radius-sm: 14px;
-  --container: 1120px;
-
-  --header-h: 82px;          /* ✅ plus haut pour logo */
-  --topbar-h: 38px;
-}
-
-*{ box-sizing:border-box; }
-html{
-  color-scheme: light;
-  scroll-behavior:smooth;
-}
-@media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior:auto; }
-  *,*::before,*::after{
-    animation-duration:.01ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:.01ms!important;
-    scroll-behavior:auto!important;
+  <!-- Données structurées (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Print212",
+    "url":"https://print212.ma",
+    "image":"https://print212.ma/assets/hero.jpg",
+    "telephone":"+212656101111",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Immeuble Andalous, Rue Assilah",
+      "addressLocality":"Fès",
+      "postalCode":"30050",
+      "addressCountry":"MA"
+    },
+    "areaServed":"Fès"
   }
-}
+  </script>
+</head>
 
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  color: var(--text);
-  line-height: 1.55;
-  text-rendering: optimizeLegibility;
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-  /* ✅ fond “pro” comme tes exemples */
-  background:
-    radial-gradient(900px 500px at 15% 0%, rgba(42,111,214,.16), transparent 55%),
-    radial-gradient(900px 500px at 85% 0%, rgba(185,167,255,.16), transparent 55%),
-    linear-gradient(var(--bg), var(--bg2));
-}
+  <!-- ✅ TOPBAR (ajout complet) -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a href="tel:+212656101111">📞 +212 656 10 11 11</a>
+      <span class="sep">|</span>
+      <a href="mailto:contact@print212.ma">✉️ contact@print212.ma</a>
+    </div>
+  </div>
 
-img{ max-width:100%; height:auto; }
-a{ color: var(--primary); text-decoration-thickness:.08em; text-underline-offset:.16em; }
-a:hover{ color: var(--primary-2); }
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Print212 — Accueil">
+        <!-- ✅ Logo : mets ton fichier ici (déjà dans /assets/logo.svg) -->
+        <img
+          class="brand-logo"
+          src="assets/logo.svg"
+          alt="Logo Print212"
+          width="64"
+          height="64"
+          decoding="async"
+        />
+        <span class="brand-text">
+          <span class="brand-name">Print212</span>
+          <span class="brand-sub">Imprimerie à Fès</span>
+        </span>
+      </a>
 
-.container{
-  width: min(100% - 2rem, var(--container));
-  margin-inline:auto;
-}
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span class="nav-toggle-lines" aria-hidden="true"></span>
+        <span class="sr-only">Ouvrir le menu</span>
+      </button>
 
-/* A11y */
-.skip-link{
-  position:absolute;
-  left:-999px;
-  top:1rem;
-  padding:.75rem 1rem;
-  background: var(--text);
-  color:#fff;
-  border-radius:999px;
-  z-index:9999;
-}
-.skip-link:focus{ left:1rem; }
-.sr-only{
-  position:absolute;
-  width:1px;height:1px;
-  padding:0;margin:-1px;
-  overflow:hidden;
-  clip:rect(0,0,0,0);
-  white-space:nowrap;
-  border:0;
-}
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+        <a href="#services">Services</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#pourquoi">Pourquoi nous</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://wa.me/212656101111" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
 
-/* ===== Topbar (optionnel) =====
-   Si tu ajoutes dans le HTML:
-   <div class="topbar"><div class="container topbar-inner">...</div></div>
-*/
-.topbar{
-  height: var(--topbar-h);
-  background: rgba(15,23,42,.92);
-  color: rgba(255,255,255,.92);
-  border-bottom: 1px solid rgba(255,255,255,.10);
-}
-.topbar-inner{
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap: 16px;
-  font-weight: 650;
-  font-size: 14px;
-}
-.topbar a{
-  color: rgba(255,255,255,.92);
-  text-decoration:none;
-}
-.topbar a:hover{ color:#fff; }
-.topbar .sep{ opacity:.35; }
+  <main id="contenu">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <p class="hero-kicker">Imprimerie à Fès • Maroc</p>
 
-/* ===== Header ===== */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+          <h1>Imprimerie professionnelle à Fès — Print212</h1>
 
-  background: rgba(255,255,255,.82);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-}
-@supports not (backdrop-filter: blur(14px)){
-  .site-header{ background:#fff; }
-}
+          <p class="hero-subtitle">
+            Impression nette, couleurs fidèles et finitions soignées. Print212 vous accompagne pour vos
+            <strong>cartes de visite</strong>, <strong>flyers</strong>, <strong>textile</strong>,
+            <strong>affiches</strong>, <strong>brochures</strong>, <strong>stickers</strong> et
+            <strong>roll-up</strong>. Devis rapide et conseil personnalisé.
+          </p>
 
-.header-inner{
-  height: var(--header-h);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 1rem;
-}
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://wa.me/212656101111" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-secondary" href="tel:+212656101111">Appeler</a>
+            <a class="btn btn-ghost" href="mailto:contact@print212.ma">Email</a>
+          </div>
 
-/* Brand */
-.brand{
-  display:flex;
-  align-items:center;
-  gap: 14px;
-  min-width: 0;
-  text-decoration:none;
-  color:inherit;
-}
+          <ul class="hero-badges" aria-label="Points forts">
+            <li>Qualité d’impression</li>
+            <li>Délais rapides</li>
+            <li>Prix compétitifs</li>
+          </ul>
+        </div>
 
-/* ✅ logo plus grand + carré propre */
-.brand-logo{
-  width: 64px;
-  height: 64px;
-  display:block;
-  object-fit: contain;
-  border-radius: 14px;
-  background: rgba(255,255,255,.75);
-  border: 1px solid var(--border);
-  box-shadow: 0 8px 18px rgba(15,23,42,.08);
-  padding: 6px;
-}
+        <div class="hero-card" aria-label="Demander un devis">
+          <div class="hero-card-top">
+            <h3 class="h3">Besoin d’une imprimerie à Fès ?</h3>
+            <p class="muted">Réponse rapide par WhatsApp ou téléphone.</p>
+          </div>
 
-.brand-text{
-  display:flex;
-  flex-direction:column;
-  line-height:1.05;
-  min-width:0;
-}
-.brand-name{
-  font-weight: 900;
-  letter-spacing: .1px;
-  font-size: 18px;
-}
-.brand-sub{
-  font-size: 12.5px;
-  color: var(--muted);
-  margin-top: 3px;
-}
+          <div class="hero-card-actions">
+            <a class="btn btn-primary btn-block" href="#contact">Demander un devis</a>
+            <a class="btn btn-secondary btn-block" href="tel:+212656101111">+212 656 10 11 11</a>
+          </div>
 
-/* Nav */
-.site-nav{
-  display:none;
-  gap:.25rem;
-  align-items:center;
-}
-.site-nav a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:.62rem .85rem;
-  border-radius: 999px;
-  text-decoration:none;
-  color: var(--text);
-  font-weight: 750;
-  font-size: .95rem;
-}
-.site-nav a:hover{
-  background: rgba(42,111,214,.08);
-}
-.site-nav a:focus-visible{
-  outline: 3px solid rgba(42,111,214,.22);
-  outline-offset: 2px;
-}
+          <p class="fineprint">Adresse : Immeuble Andalous, Rue Assilah, Fès 30050, Maroc</p>
+        </div>
 
-/* CTA WhatsApp dans nav */
-.nav-cta{
-  background: rgba(22,163,74,.12);
-  color: var(--success) !important;
-  border: 1px solid rgba(22,163,74,.22);
-}
-.nav-cta:hover{
-  background: rgba(22,163,74,.18) !important;
-}
+        <!-- ✅ HERO IMAGE (ajout complet)
+             Upload une image: /assets/hero.jpg
+        -->
+        <div class="hero-media">
+          <img src="assets/hero.jpg" alt="Atelier d’impression Print212" loading="eager" />
+        </div>
+      </div>
+    </section>
 
-/* Mobile nav button */
-.nav-toggle{
-  appearance:none;
-  border: 1px solid var(--border);
-  background: #fff;
-  border-radius: 14px;
-  padding: .62rem .68rem;
-  box-shadow: var(--shadow-sm);
-}
-.nav-toggle:focus-visible{ outline: 3px solid rgba(42,111,214,.22); outline-offset: 2px; }
-.nav-toggle-lines{
-  position: relative;
-  display:block;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 999px;
-}
-.nav-toggle-lines::before,
-.nav-toggle-lines::after{
-  content:"";
-  position:absolute;
-  left:0;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 999px;
-  transition: transform .18s ease, top .18s ease, opacity .18s ease;
-}
-.nav-toggle-lines::before{ top: -7px; }
-.nav-toggle-lines::after{ top: 7px; }
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services d’impression</h2>
+          <p class="muted">Tout ce qu’il faut pour votre communication. Formats variés et finitions adaptées.</p>
+        </div>
 
-body.nav-open .nav-toggle-lines{ background: transparent; }
-body.nav-open .nav-toggle-lines::before{ top: 0; transform: rotate(45deg); }
-body.nav-open .nav-toggle-lines::after{ top: 0; transform: rotate(-45deg); }
+        <div class="grid cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🪪</div>
+            <h3>Cartes de visite</h3>
+            <p>Premium, recto/verso, finitions mates ou brillantes.</p>
+          </article>
 
-body.nav-open .site-nav{
-  display:flex;
-  position:absolute;
-  top: calc(var(--header-h) + 1px);
-  left:0;
-  right:0;
-  padding: .85rem 1rem 1.1rem;
-  flex-direction: column;
-  background: rgba(255,255,255,.96);
-  border-bottom: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-}
-body.nav-open .site-nav a{
-  width: min(100% - 1rem, var(--container));
-  margin-inline:auto;
-  justify-content:flex-start;
-  padding:.9rem 1rem;
-  border: 1px solid var(--border);
-  background:#fff;
-}
-body.nav-open .site-nav a:hover{ background: rgba(42,111,214,.06); }
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📰</div>
+            <h3>Flyers</h3>
+            <p>Promotion, événements, menus — impression nette et rapide.</p>
+          </article>
 
-@media (min-width: 920px){
-  .nav-toggle{ display:none; }
-  .site-nav{ display:flex; position:static; }
-  body.nav-open .site-nav{ position:static; flex-direction:row; padding:0; border:0; background:transparent; box-shadow:none; }
-  body.nav-open .site-nav a{ width:auto; margin:0; border:0; background:transparent; padding:.62rem .85rem; }
-}
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">👕</div>
+            <h3>Impression textile</h3>
+            <p>T-shirts, sweatshirts, personnalisation — rendu durable.</p>
+          </article>
 
-/* ===== Typography / Sections ===== */
-.section{ padding: 64px 0; }
-.section-alt{
-  background: rgba(255,255,255,.65);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.section-head{ margin-bottom: 18px; }
-.section-head h2{ margin: 0 0 8px; letter-spacing: -.02em; }
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🖼️</div>
+            <h3>Affiches</h3>
+            <p>Grand format, couleurs vibrantes — visibilité maximale.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-h1,h2,h3{ line-height:1.12; letter-spacing:-.02em; }
-h1{ margin:0 0 14px; font-size: clamp(1.9rem, 4vw, 3.2rem); }
-h2{ font-size: clamp(1.35rem, 2.8vw, 2.15rem); }
-h3{ font-size: 1.1rem; margin:0 0 .35rem; }
-.muted{ color: var(--muted); margin:0; }
+    <!-- REALISATIONS -->
+    <section id="realisations" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Réalisations</h2>
+          <p class="muted">Exemples de travaux réalisés. (Ajoute tes images dans /assets)</p>
+        </div>
 
-/* ===== Hero ===== */
-.hero{
-  padding: 46px 0 34px;
-}
-.hero-inner{
-  display:grid;
-  gap: 20px;
-  align-items:start;
-}
+        <div class="grid gallery">
+          <figure class="shot">
+            <img src="assets/real-1.jpg" alt="Cartes de visite Print212" loading="lazy" />
+            <figcaption>Cartes de visite</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/real-2.jpg" alt="Flyers Print212" loading="lazy" />
+            <figcaption>Flyers</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/real-3.jpg" alt="Impression textile Print212" loading="lazy" />
+            <figcaption>Textile</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/real-4.jpg" alt="Affiches Print212" loading="lazy" />
+            <figcaption>Affiches & PLV</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-.hero-kicker{
-  display:inline-flex;
-  align-items:center;
-  gap:.5rem;
-  margin:0 0 10px;
-  color: var(--muted);
-  font-weight: 800;
-  letter-spacing: .12px;
-}
-.hero-subtitle{
-  color: var(--muted);
-  font-size: 1.06rem;
-  max-width: 62ch;
-  margin: 0 0 14px;
-}
-.cta-row{ display:flex; flex-wrap:wrap; gap:.75rem; margin-top: 14px; }
+    <!-- POURQUOI NOUS -->
+    <section id="pourquoi" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pourquoi nous choisir ?</h2>
+          <p class="muted">Qualité, rapidité, conseil — une équipe à votre écoute.</p>
+        </div>
 
-.hero-badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.5rem;
-  padding:0;
-  margin: 16px 0 0;
-  list-style:none;
-}
-.hero-badges li{
-  font-size:.92rem;
-  color: var(--muted);
-  background: rgba(255,255,255,.75);
-  border: 1px solid var(--border);
-  padding: .44rem .66rem;
-  border-radius: 999px;
-}
+        <div class="grid reasons">
+          <div class="reason">
+            <h3 class="h4">Qualité professionnelle</h3>
+            <p>Contrôle des couleurs, finitions soignées, rendu net.</p>
+          </div>
+          <div class="reason">
+            <h3 class="h4">Délais rapides</h3>
+            <p>Traitement rapide des demandes, respect des échéances.</p>
+          </div>
+          <div class="reason">
+            <h3 class="h4">Prix compétitifs</h3>
+            <p>Options adaptées à votre budget, devis clair.</p>
+          </div>
+          <div class="reason">
+            <h3 class="h4">Conseil personnalisé</h3>
+            <p>On vous aide à choisir papier, format, finition.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* ✅ bloc image hero (si présent dans HTML) */
-.hero-media{
-  border-radius: 22px;
-  overflow:hidden;
-  border: 1px solid var(--border);
-  background: linear-gradient(135deg, rgba(42,111,214,.12), rgba(185,167,255,.12));
-  box-shadow: var(--shadow);
-}
-.hero-media img{
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  display:block;
-}
+    <!-- AVIS -->
+    <section id="avis" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Avis clients</h2>
+          <p class="muted">Quelques retours (tu peux les remplacer par de vrais avis).</p>
+        </div>
 
-/* Card à droite (ton bloc devis) */
-.hero-card{
-  background: rgba(255,255,255,.92);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 18px;
-}
-.hero-card-top{ margin-bottom: 14px; }
-.hero-card-actions{ display:flex; flex-direction:column; gap:.6rem; }
+        <div class="grid testimonials">
+          <figure class="testimonial">
+            <blockquote>“Service rapide et rendu impeccable. Je recommande.”</blockquote>
+            <figcaption>— Client à Fès</figcaption>
+          </figure>
 
-@media (min-width: 920px){
-  .hero{ padding: 64px 0 40px; }
-  .hero-inner{
-    grid-template-columns: 1.05fr .95fr;
-    gap: 28px;
-    align-items:center;
-  }
-}
+          <figure class="testimonial">
+            <blockquote>“Très bon rapport qualité/prix, équipe pro.”</blockquote>
+            <figcaption>— Client professionnel</figcaption>
+          </figure>
 
-/* ===== Buttons ===== */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:.55rem;
-  padding: .9rem 1.05rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  font-weight: 850;
-  text-decoration:none;
-  cursor:pointer;
-  transition: transform .08s ease, background-color .14s ease, border-color .14s ease, color .14s ease, box-shadow .14s ease;
-  will-change: transform;
-}
-.btn:active{ transform: translateY(1px); }
-.btn:focus-visible{ outline: 3px solid rgba(42,111,214,.22); outline-offset:2px; }
+          <figure class="testimonial">
+            <blockquote>“Flyers livrés à temps, couleurs super.”</blockquote>
+            <figcaption>— Association</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-.btn-primary{
-  background: var(--success);
-  color:#fff;
-  border-color: rgba(0,0,0,.08);
-  box-shadow: 0 12px 28px rgba(22,163,74,.18);
-}
-.btn-primary:hover{ background: var(--success-2); color:#fff; }
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact & Devis</h2>
+          <p class="muted">Expliquez votre besoin, on répond rapidement.</p>
+        </div>
 
-.btn-secondary{
-  background: rgba(42,111,214,.10);
-  color: var(--primary-2);
-  border-color: rgba(42,111,214,.18);
-}
-.btn-secondary:hover{ background: rgba(42,111,214,.14); }
+        <div class="grid contact-grid">
+          <div class="contact-card">
+            <h3 class="h3">Coordonnées</h3>
+            <ul class="contact-list">
+              <li><strong>Téléphone :</strong> <a href="tel:+212656101111">+212 656 10 11 11</a></li>
+              <li><strong>Email :</strong> <a href="mailto:contact@print212.ma">contact@print212.ma</a></li>
+              <li><strong>Adresse :</strong> Immeuble Andalous, Rue Assilah, Fès 30050, Maroc</li>
+            </ul>
 
-.btn-ghost{
-  background: rgba(255,255,255,.85);
-  border-color: var(--border);
-  color: var(--text);
-}
-.btn-ghost:hover{ background: rgba(255,255,255,1); }
+            <div class="map-wrap" aria-label="Carte Google Maps">
+              <iframe
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=F%C3%A8s%2030050%20Maroc&output=embed"
+                title="Carte Print212"
+              ></iframe>
+            </div>
+          </div>
 
-.btn-block{ width:100%; }
+          <!-- Netlify form (si tu utilises Netlify) -->
+          <div class="form-card">
+            <h3 class="h3">Demander un devis</h3>
 
-/* ===== Grid utilities ===== */
-.grid{ display:grid; gap: 16px; }
+            <form name="devis" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="devis" />
 
-/* ===== Services cards ===== */
-.cards{ grid-template-columns: 1fr; }
+              <label>
+                <span>Nom</span>
+                <input name="nom" type="text" autocomplete="name" required />
+              </label>
 
-.card{
-  background: rgba(255,255,255,.94);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow-sm);
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-}
-.card:hover{
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-  border-color: rgba(42,111,214,.18);
-}
+              <label>
+                <span>Téléphone</span>
+                <input name="telephone" type="tel" autocomplete="tel" required />
+              </label>
 
-.card-icon{
-  width: 46px;
-  height: 46px;
-  border-radius: 16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom: 12px;
-  background: linear-gradient(135deg, rgba(42,111,214,.16), rgba(185,167,255,.16));
-  color: var(--primary-2);
-  border: 1px solid rgba(42,111,214,.14);
-}
-.card p{ margin:0; color: var(--muted); }
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
 
-@media (min-width: 540px){
-  .cards{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-}
-@media (min-width: 920px){
-  .cards{ grid-template-columns: repeat(4, minmax(0,1fr)); }
-}
+              <label>
+                <span>Votre demande</span>
+                <textarea name="message" rows="6" placeholder="Ex: 1000 flyers A5, papier 135g, finition..." required></textarea>
+              </label>
 
-/* ===== Gallery ===== */
-.gallery{ grid-template-columns: 1fr; }
+              <button class="btn btn-primary btn-block" type="submit">Envoyer</button>
 
-.shot{
-  margin:0;
-  overflow:hidden;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  background: #fff;
-  box-shadow: var(--shadow-sm);
-}
-.shot img{
-  display:block;
-  width:100%;
-  height: 220px;
-  object-fit: cover;
-}
-.shot figcaption{
-  padding: .9rem 1rem;
-  font-weight: 850;
-  color: var(--text);
-  border-top: 1px solid var(--border);
-}
-@media (min-width: 720px){
-  .gallery{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-}
+              <p class="fineprint">Ou contactez-nous directement sur WhatsApp pour une réponse immédiate.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-/* ===== Reasons ===== */
-.reasons{ grid-template-columns: 1fr; }
-.reason{
-  padding: 18px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.94);
-  box-shadow: var(--shadow-sm);
-}
-.reason p{ margin:0; color: var(--muted); }
-@media (min-width: 720px){
-  .reasons{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-}
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Print212</p>
+        <p class="muted" style="color: rgba(255,255,255,.75);">
+          Imprimerie à Fès — cartes de visite, flyers, textile, affiches, brochures, stickers, roll-up.
+        </p>
+      </div>
 
-/* ===== Testimonials ===== */
-.testimonials{ grid-template-columns: 1fr; }
-.testimonial{
-  margin:0;
-  background: rgba(255,255,255,.94);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow-sm);
-}
-.testimonial blockquote{ margin: 0 0 .75rem; color: var(--text); }
-.testimonial figcaption{ color: var(--muted); }
-@media (min-width: 920px){
-  .testimonials{ grid-template-columns: repeat(3, minmax(0,1fr)); }
-}
+      <div>
+        <p class="footer-brand">Liens</p>
+        <ul class="footer-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#pourquoi">Pourquoi nous</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
 
-/* ===== Contact ===== */
-.contact-grid{ grid-template-columns: 1fr; }
-.contact-card,
-.form-card{
-  background: rgba(255,255,255,.94);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: var(--shadow-sm);
-}
-.contact-list{
-  margin: .75rem 0 1rem;
-  padding-left: 1.1rem;
-  color: var(--muted);
-}
-.contact-list li{ margin: .35rem 0; }
-label{ display:block; margin: .85rem 0; }
-label > span{ display:block; font-weight: 850; margin: 0 0 .35rem; }
+      <div>
+        <p class="footer-brand">Plan</p>
+        <div class="footer-map">
+          <iframe
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=F%C3%A8s%2030050%20Maroc&output=embed"
+            title="Carte Print212"
+          ></iframe>
+        </div>
+      </div>
+    </div>
 
-input, textarea{
-  width: 100%;
-  padding: .9rem .95rem;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: #fff;
-  font: inherit;
-}
-input:focus, textarea:focus{
-  outline: 3px solid rgba(42,111,214,.18);
-  border-color: rgba(42,111,214,.22);
-}
+    <div class="container footer-legal">
+      <p class="muted" style="color: rgba(255,255,255,.75); margin:0;">
+        © <span id="year"></span> Print212 — Tous droits réservés.
+      </p>
+    </div>
+  </footer>
 
-.form-success{
-  border: 1px solid rgba(22,163,74,.25);
-  background: rgba(22,163,74,.10);
-  color: #0b4d25;
-  border-radius: 14px;
-  padding: .9rem .95rem;
-  margin: 0 0 1rem;
-}
+  <!-- Floating WhatsApp -->
+  <a class="wa-float" href="https://wa.me/212656101111" target="_blank" rel="noopener" aria-label="Contact WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path fill="currentColor" d="M19.11 17.28c-.28-.14-1.64-.8-1.9-.9-.25-.1-.43-.14-.62.14-.19.28-.71.9-.87 1.08-.16.19-.32.21-.6.07-.28-.14-1.17-.43-2.22-1.37-.82-.73-1.37-1.64-1.53-1.92-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47l-.53-.01c-.19 0-.49.07-.74.35-.25.28-.98.96-.98 2.34 0 1.38 1 2.71 1.14 2.9.14.19 1.97 3 4.78 4.21.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.64-.67 1.87-1.31.23-.64.23-1.18.16-1.31-.07-.13-.25-.21-.53-.35z"/>
+      <path fill="currentColor" d="M26.67 5.33A14.56 14.56 0 0 0 16.02 1C8.31 1 2.04 7.27 2.04 14.98c0 2.46.64 4.86 1.86 6.98L2 31l9.25-1.83a14 14 0 0 0 4.77.82h.01c7.71 0 13.98-6.27 13.98-13.98 0-3.73-1.45-7.24-4.09-9.68zM16.03 27.66h-.01c-1.61 0-3.18-.43-4.56-1.24l-.33-.19-5.49 1.08 1.1-5.35-.22-.35a11.6 11.6 0 0 1-1.78-6.18c0-6.38 5.2-11.58 11.6-11.58 3.09 0 5.99 1.2 8.17 3.38a11.5 11.5 0 0 1 3.39 8.18c0 6.38-5.2 11.58-11.58 11.58z"/>
+    </svg>
+  </a>
 
-@media (min-width: 920px){
-  .contact-grid{ grid-template-columns: 1fr 1fr; }
-}
-
-/* ===== Footer ===== */
-.site-footer{
-  background: #0b1220;
-  color: rgba(255,255,255,.92);
-  padding: 40px 0 22px;
-}
-.site-footer a{ color: #e8f0ff; }
-.site-footer a:hover{ color:#fff; }
-
-.footer-inner{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-  align-items:start;
-}
-.footer-brand{ margin:0 0 .4rem; font-weight: 900; }
-.footer-links{ margin:.5rem 0 0; padding-left: 1.1rem; }
-.footer-links li{ margin:.3rem 0; }
-
-.footer-legal{
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(255,255,255,.10);
-}
-
-.footer-map{
-  margin-top: .75rem;
-  border-radius: var(--radius);
-  overflow:hidden;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.05);
-}
-.footer-map iframe{
-  display:block;
-  width:100%;
-  height: 240px;
-  border:0;
-}
-
-@media (min-width: 920px){
-  .footer-inner{ grid-template-columns: 1.15fr .85fr 1fr; }
-  .footer-map iframe{ height: 260px; }
-}
-
-/* ===== Floating WhatsApp ===== */
-.wa-float{
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 1200;
-  width: 58px;
-  height: 58px;
-  border-radius: 18px;
-  background: var(--success);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow: 0 18px 40px rgba(15,23,42,.24);
-  border: 1px solid rgba(0,0,0,.08);
-  text-decoration:none;
-}
-.wa-float:hover{ background: var(--success-2); color:#fff; }
-.wa-float:focus-visible{ outline: 3px solid rgba(255,255,255,.65); outline-offset: 3px; }
-.wa-float svg{ width: 26px; height: 26px; display:block; }
-
-/* Helpers */
-.map-wrap{
-  border-radius: var(--radius);
-  overflow:hidden;
-  border: 1px solid var(--border);
-  background:#fff;
-  box-shadow: var(--shadow-sm);
-}
-.map-wrap iframe{ display:block; width:100%; height: 340px; border:0; }
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
