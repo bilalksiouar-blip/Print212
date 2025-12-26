@@ -968,6 +968,31 @@ h2:has(+ img){
    .site-nav a{
   white-space: nowrap;
 }
+/* ======================================
+   SUPPRIMER DEFINITIVEMENT L'ANCIEN MENU
+   (Réalisations / Pourquoi nous / Avis / Contact rouges)
+   ====================================== */
+
+/* Cache tout le menu secondaire à droite */
+.site-header .site-nav + .site-nav,
+.site-header .site-nav.right,
+.site-header .site-nav.secondary {
+  display: none !important;
+}
+
+/* Cache explicitement les anciens liens rouges */
+.site-header a[href*="realisations"],
+.site-header a[href*="avis"],
+.site-header a[href*="contact"],
+.site-header a[href*="pourquoi"] {
+  display: none !important;
+}
+
+/* Cache le bouton rouge sans texte */
+.site-header a[style*="red"],
+.site-header .btn-red {
+  display: none !important;
+}
 
 
 
