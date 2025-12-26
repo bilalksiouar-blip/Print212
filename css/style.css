@@ -958,6 +958,14 @@ h2:has(+ img){
 .main-nav a{
   display: none !important;
 }
+   /* Cache anciens items */
+.site-header a[href="#realisations"],
+.site-header a[href="#avis"],
+.site-header a[href="#contact"],
+.site-header a[href="#pourquoi"]{
+  display: none !important;
+}
+
 
 
 
