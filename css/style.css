@@ -993,6 +993,16 @@ h2:has(+ img){
 .site-header .btn-red {
   display: none !important;
 }
+/* =====================================
+   SUPPRIMER LE BOUTON WHATSAPP ROUGE
+   (garder uniquement le bouton vert)
+   ===================================== */
+
+/* Cible le bouton WhatsApp rouge du header */
+.site-header a:not(.nav-cta)[href*="wa.me"],
+.site-header a:not(.nav-cta)[href*="whatsapp"] {
+  display: none !important;
+}
 
 
 
