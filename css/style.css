@@ -506,3 +506,50 @@ h3{ margin:0 0 .35rem; font-size:1.15rem; }
     font-size: 0.85rem !important;
   }
 }
+/* =========================================
+   TOPBAR MOBILE/TABLET FIX (<= 920px)
+   tel + email visibles + "Imprimerie à Fès" bien placé
+   ========================================= */
+@media (max-width: 920px){
+
+  .topbar{
+    height: auto !important;      /* enlève la hauteur fixe */
+    padding: 8px 0 !important;
+  }
+
+  .topbar-inner{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Ligne 1 : Imprimerie à Fès */
+  .topbar-left{
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .topbar-left span{
+    white-space: nowrap !important;
+    font-weight: 800 !important;
+  }
+
+  /* Ligne 2 : téléphone + email */
+  .topbar-right{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    flex-wrap: wrap !important;   /* si ça ne rentre pas, ça passe en 2 lignes proprement */
+  }
+
+  .topbar-right a{
+    white-space: nowrap !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+  }
+}
+
