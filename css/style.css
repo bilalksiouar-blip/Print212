@@ -384,3 +384,45 @@ h3{ margin:0 0 .35rem; font-size:1.15rem; }
 }
 .wa-float:hover{ background: var(--whatsapp2); color:#fff; }
 .wa-float svg{ width: 26px; height: 26px; display:block; }
+/* ===============================
+   FIX LOGO DEFINITIF (PRINT212)
+   =============================== */
+
+/* Augmente la hauteur réelle du header */
+:root{
+  --header-h: 140px;
+}
+
+.site-header{
+  height: var(--header-h);
+}
+
+.site-header .header-inner{
+  height: var(--header-h);
+  align-items: center;
+}
+
+/* Logo : on force une vraie grande taille */
+.site-header img.brand-logo{
+  height: 120px !important;   /* ✅ TAILLE RÉELLE */
+  width: auto !important;
+  max-height: none !important;
+  object-fit: contain;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 540px){
+  :root{
+    --header-h: 110px;
+  }
+  .site-header img.brand-logo{
+    height: 90px !important;
+  }
+}
+
+/* Supprime définitivement le texte à côté */
+.site-header .brand-text{
+  display: none !important;
+}
+
