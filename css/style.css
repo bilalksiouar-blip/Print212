@@ -108,13 +108,6 @@ a:hover{ color: var(--red2); }
   gap:14px;
 }
 .brand{ display:flex; align-items:center; text-decoration:none; color:inherit; }
-.brand-logo{
-  height: 100px;       /* ✅ plus grand */
-  width: auto;
-  object-fit: contain;
-}
-@media (max-width: 540px){
-  .brand-logo{ height: 110px; }  /* ✅ mobile */
 }
  /* ✅ logo stable */
 .brand-text{ display:none !important; }
