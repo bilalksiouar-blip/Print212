@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#2A6FD6" />
+  <meta name="theme-color" content="#e30613" />
 
   <title>Imprimerie professionnelle à Fès – Print212</title>
   <meta
@@ -16,7 +16,6 @@
   />
   <link rel="canonical" href="https://print212.ma" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_MA" />
   <meta property="og:site_name" content="Print212" />
@@ -27,7 +26,6 @@
   />
   <meta property="og:url" content="https://print212.ma" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Imprimerie professionnelle à Fès – Print212" />
   <meta
@@ -37,10 +35,8 @@
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1220'/%3E%3Cpath d='M18 44V20h16a10 10 0 0 1 0 20H26v4h-8Zm8-12h8a2 2 0 0 0 0-4h-8v4Z' fill='white'/%3E%3C/svg%3E" />
 
-  <!-- ✅ Un seul CSS (relatif, OK pour GitHub Pages) -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Données structurées (SEO Local) -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -82,30 +78,18 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Print212 – Accueil">
-        <img
-          class="brand-logo"
-          src="assets/logo.png"
-          alt="Logo Print212"
-          decoding="async"
-          loading="eager"
-        />
+        <img class="brand-logo" src="assets/logo.png" alt="Logo Print212" decoding="async" loading="eager" />
         <span class="brand-text">
           <span class="brand-name">Print212</span>
           <span class="brand-sub">Imprimerie à Fès</span>
         </span>
       </a>
 
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-nav"
-      >
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span class="nav-toggle-lines" aria-hidden="true"></span>
         <span class="sr-only">Ouvrir le menu</span>
       </button>
 
-      <!-- ✅ NAV UNIQUE -->
       <nav class="site-nav" id="site-nav">
         <a href="#cartes">Cartes de visite</a>
         <a href="#flyers">Flyers</a>
@@ -114,50 +98,45 @@
         <a href="#brochures">Brochures</a>
         <a href="#stickers">Stickers</a>
         <a href="#rollup">Roll-up</a>
+        <a href="#pourquoi">Pourquoi nous</a>
+        <a href="#contact">Contact</a>
 
-        <a href="#pourquoi" class="nav-link">Pourquoi nous</a>
-        <a href="#contact" class="nav-link">Contact</a>
-
-        <!-- ✅ SEUL bouton WhatsApp du header -->
-        <a href="https://wa.me/212656101111" class="nav-cta">WhatsApp</a>
+        <!-- ✅ WhatsApp extrême droite -->
+        <a href="https://wa.me/212656101111" class="nav-cta" target="_blank" rel="noopener">WhatsApp</a>
       </nav>
-
-      <!-- ❌ SUPPRIMÉ : le deuxième bouton WhatsApp (celui qui devenait rouge) -->
-      <!-- <a class="nav-cta" href="https://wa.me/212656101111">WhatsApp</a> -->
     </div>
   </header>
 
   <main id="contenu">
-    <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
 
         <div class="hero-copy">
-          ...
+          <h1 id="hero-title">Imprimerie professionnelle à Fès</h1>
+          <p class="hero-subtitle">
+            Cartes de visite, flyers, impression textile, affiches, brochures, stickers, roll-up.
+            Qualité pro, délais rapides, prix compétitifs.
+          </p>
         </div>
 
-        <div class="hero-media" aria-hidden="true">
-          <img
-            src="assets/Photo-accueil.webp"
-            alt="Imprimerie Print212 à Fès"
-            loading="eager"
-            decoding="async"
-          />
-        </div>
+        <!-- ✅ 3 photos centrées -->
+        <div class="hero-photos" aria-label="Photos de l'imprimerie Print212">
+          <div class="hero-shot">
+            <img src="assets/Photo-accueil.webp" alt="Imprimerie Print212 à Fès" loading="eager" decoding="async" />
+          </div>
 
-        <div class="hero-card hero-card--image" aria-label="Atelier Print212">
-          <img
-            src="assets/Photo-imprimerie.webp"
-            alt="Atelier d'impression Print212"
-            loading="lazy"
-            decoding="async"
-          />
+          <div class="hero-shot">
+            <img src="assets/Photo-imprimerie.webp" alt="Atelier d'impression Print212" loading="lazy" decoding="async" />
+          </div>
+
+          <div class="hero-shot">
+            <img src="assets/photo-atelier.webp" alt="Machines et production Print212" loading="lazy" decoding="async" />
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="section" id="services" aria-labelledby="services-title">
       <div class="container">
         <header class="section-head">
@@ -169,7 +148,7 @@
         </header>
 
         <div class="grid cards">
-          <article class="card">
+          <article class="card" id="cartes">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <path d="M4 7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7Zm3-1a1 1 0 0 0-1 1v2h16V7a1 1 0 0 0-1-1H7Zm15 5H6v6a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-6Z" fill="currentColor"/>
@@ -179,7 +158,7 @@
             <p>Premium, recto/verso, finitions mates ou brillantes.</p>
           </article>
 
-          <article class="card">
+          <article class="card" id="flyers">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v14h10V5H7Zm2 3h6v2H9V8Zm0 4h6v2H9v-2Z" fill="currentColor"/>
@@ -189,7 +168,7 @@
             <p>Promotion, événements, menus — impression nette et rapide.</p>
           </article>
 
-          <article class="card">
+          <article class="card" id="textile">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <path d="M7 4h10l2 4v4a4 4 0 0 1-4 4h-1v2H10v-2H9a4 4 0 0 1-4-4V8l2-4Zm1.2 2-1 2h13.6l-1-2H8.2ZM8 12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2H8v2Z" fill="currentColor"/>
@@ -199,7 +178,7 @@
             <p>T-shirts, sweatshirts, personnalisation — rendu durable.</p>
           </article>
 
-          <article class="card">
+          <article class="card" id="affiches">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <path d="M6 3h12v18H6V3Zm2 2v14h8V5H8Zm1 2h6v2H9V7Zm0 4h6v6H9v-6Z" fill="currentColor"/>
@@ -209,7 +188,7 @@
             <p>Grand format, couleurs vibrantes — pour visibilité maximale.</p>
           </article>
 
-          <article class="card">
+          <article class="card" id="brochures">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <path d="M7 2h8l4 4v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V7h3.5L15 3.5ZM7 10h10v2H7v-2Zm0 4h10v2H7v-2Z" fill="currentColor"/>
@@ -219,7 +198,7 @@
             <p>Agrafées ou collées — présentation claire et élégante.</p>
           </article>
 
-          <article class="card">
+          <article class="card" id="stickers">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" fill="currentColor"/>
@@ -229,7 +208,7 @@
             <p>Découpe, formes variées — idéal packaging et vitrines.</p>
           </article>
 
-          <article class="card">
+          <article class="card" id="rollup">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="24" height="24">
                 <path d="M7 3h10v4h2v14H5V7h2V3Zm2 4h6V5H9v2Zm-2 4v8h10v-8H7Z" fill="currentColor"/>
@@ -242,24 +221,60 @@
       </div>
     </section>
 
-    <!-- (le reste de ton HTML inchangé) -->
-    <!-- ... -->
+    <section class="section section-alt" id="pourquoi" aria-labelledby="why-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="why-title">Pourquoi nous</h2>
+          <p class="muted">Qualité, rapidité, accompagnement et finitions professionnelles.</p>
+        </header>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="site-footer">
-    <!-- ton footer inchangé -->
+  <!-- ✅ FOOTER COMPLET -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Print212 — Imprimerie à Fès</p>
+        <ul class="footer-list">
+          <li>Tél : <a href="tel:+212656101111">+212 656 10 11 11</a></li>
+          <li>Email : <a href="mailto:print-212@hotmail.com">print-212@hotmail.com</a></li>
+          <li>Adresse : Immeuble Andalous, Rue Assilah, Fès</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-brand">Formulaire de contact</p>
+        <form class="footer-form" action="#" method="post">
+          <input type="text" name="nom" placeholder="Nom" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" rows="4" placeholder="Votre message..." required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      © <span id="year"></span> Print212 — Tous droits réservés.
+    </div>
   </footer>
 
-  <a class="wa-float" href="https://wa.me/212656101111" aria-label="Contacter Print212 sur WhatsApp">
-    <!-- ton svg inchangé -->
+  <a class="wa-float" href="https://wa.me/212656101111" aria-label="Contacter Print212 sur WhatsApp" target="_blank" rel="noopener">
     <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
       <path fill="currentColor" d="M19.11 17.44c-.29-.14-1.71-.84-1.97-.94-.26-.1-.45-.14-.64.14-.19.29-.74.94-.91 1.14-.17.19-.33.22-.62.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.12-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43s1.03 2.82 1.17 3.01c.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.31.19 1.81.12.55-.08 1.71-.7 1.95-1.38.24-.69.24-1.28.17-1.4-.07-.12-.26-.19-.55-.33Z"/>
       <path fill="currentColor" d="M16.02 3.2c-7.06 0-12.8 5.56-12.8 12.39 0 2.18.59 4.3 1.71 6.17L3.2 28.8l7.32-1.91c1.96 1.06 4.19 1.62 5.5 1.62h.01c7.06 0 12.8-5.56 12.8-12.39 0-3.31-1.33-6.42-3.74-8.76-2.41-2.34-5.62-3.64-9.07-3.64Zm0 22.05h-.01c-1.13 0-3.18-.47-4.88-1.53l-.35-.2-4.35 1.13 1.16-4.18-.22-.33c-1.01-1.67-1.54-3.58-1.54-5.56 0-5.06 4.43-9.18 9.89-9.18 2.63 0 5.11.98 6.96 2.77 1.86 1.79 2.88 4.16 2.88 6.68 0 5.06-4.43 9.18-9.54 9.4Z"/>
     </svg>
   </a>
 
-  <!-- ✅ pour GitHub Pages, évite le "/" au début -->
-  <script src="js/main.js" defer></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const btn = document.querySelector(".nav-toggle");
+    btn?.addEventListener("click", () => {
+      const opened = document.body.classList.toggle("nav-open");
+      btn.setAttribute("aria-expanded", opened ? "true" : "false");
+    });
+  </script>
 </body>
 </html>
-
