@@ -419,3 +419,49 @@ h3{ margin:0 0 .35rem; font-size:1.15rem; }
   display: none !important;
 }
 
+/* ===============================
+   FIX LOGO PRINT212 — ULTRA FORCE
+   Colle TOUT EN BAS du CSS
+   =============================== */
+
+/* Donne plus de place au bloc logo */
+.site-header .brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:0 !important;
+  flex: 0 0 auto !important;
+  min-width: 180px !important;
+}
+
+/* Augmente la hauteur du header pour accepter un grand logo */
+.site-header .header-inner{
+  min-height: 140px !important;
+  height: auto !important;
+}
+
+/* Force la taille du logo (même si d'autres règles existent) */
+.site-header .brand img,
+.site-header .brand img.brand-logo{
+  height: 110px !important;
+  width: auto !important;
+  max-height: none !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  display:block !important;
+}
+
+/* Mobile */
+@media (max-width: 540px){
+  .site-header .header-inner{
+    min-height: 120px !important;
+  }
+  .site-header .brand img,
+  .site-header .brand img.brand-logo{
+    height: 90px !important;
+  }
+}
+
+/* Cache le texte du logo si présent */
+.site-header .brand-text{
+  display:none !important;
+}
