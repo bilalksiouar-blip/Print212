@@ -108,7 +108,15 @@ a:hover{ color: var(--red2); }
   gap:14px;
 }
 .brand{ display:flex; align-items:center; text-decoration:none; color:inherit; }
-.brand-logo{ height: 60px; width:auto; object-fit:contain; } /* ✅ logo stable */
+.brand-logo{
+  height: 92px;       /* ✅ plus grand */
+  width: auto;
+  object-fit: contain;
+}
+@media (max-width: 540px){
+  .brand-logo{ height: 72px; }  /* ✅ mobile */
+}
+ /* ✅ logo stable */
 .brand-text{ display:none !important; }
 
 /* Toggle mobile */
